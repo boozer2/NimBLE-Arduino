@@ -58,8 +58,7 @@ public:
                                             uint16_t minInterval, uint16_t maxInterval,
                                             uint16_t latency, uint16_t timeout);
     uint16_t               getPeerMTU(uint16_t conn_id);
-    std::vector<uint16_t>  getPeerDevices();
-    NimBLEAddress          getPeerAddress(uint16_t id);
+//    std::vector<uint16_t>  getPeerDevices();
     void                   advertiseOnDisconnect(bool);
 
 private:

@@ -254,31 +254,6 @@ size_t NimBLEServer::getConnectedCount() {
 
 
 /**
- * @brief Get the vector of the connected client ID's.
- */
-std::vector<uint16_t> NimBLEServer::getPeerDevices() {
-    return m_connectedPeersVec;
-}
-
-
-/**
- * @brief Get the address of a connected peer.
- * @param [in] id The connection id of the peer.
- */
-NimBLEAddress NimBLEServer::getPeerAddress(uint16_t id) {
-    int rc = 0;
-    struct ble_gap_conn_desc desc;
-
-    rc = ble_gap_conn_find(id, &desc);
-    if (rc != 0) {
-        return NimBLEAddress("");
-    }
-
-    return NimBLEAddress(desc.peer_ota_addr);
-}
-
-
-/**
  * @brief Handle a GATT Server Event.
  *
  * @param [in] event
